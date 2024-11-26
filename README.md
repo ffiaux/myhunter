@@ -2,6 +2,7 @@ My Hunter Test
 
 MySQL DDL
 
+```
 CREATE TABLE categories 
 (
 	id bigint UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -10,7 +11,9 @@ CREATE TABLE categories
 
 	FOREIGN KEY (parent_category_id) REFERENCES categories(id)
 );
+```
 
+```
 CREATE TABLE products 
 (
 	id bigint UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -22,3 +25,4 @@ CREATE TABLE products
 	
 	FOREIGN KEY (category_id) REFERENCES categories(id)
 );
+```
