@@ -1,0 +1,41 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<div th:replace="fragments/header :: header-css"/>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Products</h1>
+			<h4>				
+				<a href="/products/create" class="btn btn-primary" style="display: inline-flex"><i class="material-icons">add</i>Create new product</a>
+			</h4>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Name</th>
+						<th scope="col">Description</th>
+						<th scope="col">Category Path</th>
+						<th scope="col">Price</th>
+					</tr>
+				</thead>			
+			
+				<tr th:each="p:${products}">
+					<td th:text=${p.id}></td>
+					<td th:text=${p.name}></td>
+					<td th:text=${p.description}></td>
+					<td th:text=${p.categoryPath}></td>
+					<td th:text=${p.price}></td>
+					
+					<td>
+						<a th:href="@{/products/edit(id=${p.id})}" class="btn btn-info"><i class="material-icons">edit</i></a>					
+					</td>
+					
+					<td>
+						<a th:href="@{/products/delete(id=${p.id})}" class="btn btn-danger"><i class="material-icons">delete</i></a>					
+					</td>					
+				</tr>
+			</table>
+		</div>	
+	</body>
+</html>
