@@ -2,7 +2,7 @@ My Hunter Test
 
 MySQL DDL
 
-```
+```sql
 CREATE TABLE categories 
 (
 	id bigint UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -13,7 +13,7 @@ CREATE TABLE categories
 );
 ```
 
-```
+```sql
 CREATE TABLE products 
 (
 	id bigint UNSIGNED AUTO_INCREMENT PRIMARY KEY,
